@@ -1,19 +1,18 @@
 // --- CONFIGURATION ---
 const DISCORD_ID = "1017840122328252538";
-const BIN_ID = "69d9531836566621a89d2233"; // Get this from JSONBin.io
+const BIN_ID = "f995d1a5b4815e8aac19"; // Get this from npoint.io
 let player;
 let playerReady = false;
 
-// --- 1. GLOBAL ANNOUNCEMENT SYSTEM (JSONBin Version) ---
+// --- 1. GLOBAL ANNOUNCEMENT SYSTEM (npoint Version) ---
 async function checkAnnouncements() {
     try {
-        // Fetches your message from the online bin
-        const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
-            headers: { 'X-Bin-Meta': false }
-        });
+        // Fetches your message from npoint (automatically public)
+        const response = await fetch(`https://api.npoint.io/${BIN_ID}`);
         const data = await response.json();
         const bar = document.getElementById('global-announcement');
 
+        // npoint usually returns the raw object
         if (data.msg && data.msg !== "NONE" && data.msg !== "") {
             document.getElementById('announcement-text').innerText = data.msg.toUpperCase();
             bar.classList.remove('hidden');
@@ -21,12 +20,12 @@ async function checkAnnouncements() {
             bar.classList.add('hidden');
         }
     } catch (e) {
-        console.log("Announcement system offline.");
+        console.log("Announcement system offline or ID incorrect.");
     }
 }
 
-// Check for updates every 60 seconds
-setInterval(checkAnnouncements, 60000);
+// Check for updates every 45 seconds
+setInterval(checkAnnouncements, 45000);
 checkAnnouncements();
 
 // --- 2. INSTANT AUDIO ENGINE ---
