@@ -16,22 +16,50 @@ body {
 
 /* GLOBAL ANNOUNCEMENT BAR */
 #global-announcement {
-    position: fixed; top: 0; left: 0; width: 100%;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    width: 100%;
+    height: 35px; /* Explicit height */
     background: rgba(255, 0, 85, 0.95);
-    color: white; z-index: 10001;
-    padding: 8px 0; text-align: center;
+    color: white;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Orbitron', sans-serif;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
     box-shadow: 0 0 20px rgba(255, 0, 85, 0.6);
     font-size: 0.8rem;
 }
 
-.announcement-tag {
-    font-weight: 900; margin-right: 10px;
-    color: #ff0055; background: #fff; padding: 2px 8px;
+/* --- DISCORD UI --- */
+.status-bar {
+    position: fixed !important;
+    top: 50px !important; /* Pushes it 50px away from the top of the screen */
+    left: 20px !important;
+    background: rgba(10, 5, 20, 0.9);
+    border: 1px solid #4b0082;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
 }
 
-.hidden { display: none !important; }
+/* --- DISCORD UI - Adjusted Position --- */
+.status-bar {
+    position: fixed;
+    top: 45px; /* Pushed down to clear the announcement bar */
+    left: 20px;
+    background: rgba(10, 5, 20, 0.9);
+    border: 1px solid #4b0082;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+}
 
 #vibe-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
