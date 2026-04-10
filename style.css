@@ -20,7 +20,7 @@ body {
     top: 0 !important;
     left: 0;
     width: 100%;
-    height: 35px; /* Explicit height */
+    height: 35px;
     background: rgba(255, 0, 85, 0.95);
     color: white;
     z-index: 10001;
@@ -36,22 +36,8 @@ body {
 /* --- DISCORD UI --- */
 .status-bar {
     position: fixed !important;
-    top: 50px !important; /* Pushes it 50px away from the top of the screen */
+    top: 50px !important; /* Clears the announcement bar perfectly */
     left: 20px !important;
-    background: rgba(10, 5, 20, 0.9);
-    border: 1px solid #4b0082;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 100;
-}
-
-/* --- DISCORD UI - Adjusted Position --- */
-.status-bar {
-    position: fixed;
-    top: 45px; /* Pushed down to clear the announcement bar */
-    left: 20px;
     background: rgba(10, 5, 20, 0.9);
     border: 1px solid #4b0082;
     padding: 10px;
@@ -84,14 +70,6 @@ body {
 #volume-control { -webkit-appearance: none; width: 60px; height: 2px; background: #4b0082; outline: none; }
 #volume-control::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 8px; height: 8px; background: #ff0055; box-shadow: 0 0 5px #ff0055; }
 
-/* --- DISCORD UI --- */
-.status-bar {
-    position: fixed; top: 20px; left: 20px;
-    background: rgba(10, 5, 20, 0.9);
-    border: 1px solid #4b0082;
-    padding: 10px; display: flex; align-items: center; gap: 10px; z-index: 100;
-}
-
 #current-activity { font-size: 0.7rem; color: #ff0055; animation: vibe-breath 3s infinite ease-in-out; }
 @keyframes vibe-breath { 0%, 100% { opacity: 0.6; transform: translateX(0); } 50% { opacity: 1; transform: translateX(2px); } }
 
@@ -100,14 +78,46 @@ body {
 
 /* --- ARCHIVE LAYOUT --- */
 .archive-container { display: flex; justify-content: center; align-items: center; height: 100vh; }
-.archive-box { background: rgba(10, 5, 20, 0.85); padding: 35px; border: 1px solid #4b0082; width: 500px; height: 70vh; display: flex; flex-direction: column; backdrop-filter: blur(10px); }
+
+.archive-box {
+    background: rgba(10, 5, 20, 0.85);
+    padding: 35px;
+    border: 1px solid #4b0082;
+    width: 750px; /* Made it wider for images */
+    max-width: 90vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+}
+
 .glitch-text { font-family: 'Orbitron', sans-serif; color: #ff0055; letter-spacing: 5px; }
+
 .news-scroll { flex-grow: 1; overflow-y: auto; text-align: left; margin: 20px 0; padding-right: 10px; }
 .news-scroll::-webkit-scrollbar { width: 3px; }
 .news-scroll::-webkit-scrollbar-thumb { background: #ff0055; }
-article { border-left: 1px solid #ff0055; padding-left: 15px; margin-bottom: 40px; }
+
+article {
+    border-left: 1px solid #ff0055;
+    padding-left: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
 article h3 { font-size: 1rem; color: #ff0055; margin-bottom: 5px; }
-article p { line-height: 1.5; font-size: 0.9rem; color: #d1c4e9; }
+article p { line-height: 1.5; font-size: 0.9rem; color: #d1c4e9; margin-bottom: 10px; }
+
+/* --- ARCHIVE IMAGES --- */
+.archive-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain; /* Shows whole image without cropping */
+    border: 1px solid #ff0055;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+}
+
 .separator { height: 1px; background: #4b0082; margin: 10px 0; opacity: 0.5; }
 .footer-note { font-size: 0.7rem; color: #4b0082; letter-spacing: 2px; }
 
