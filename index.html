@@ -6,9 +6,19 @@
     <title>| Rvn | The Discord Situation.</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Red+Hat+Mono:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
 </head>
 <body oncontextmenu="return false;">
+
+<div id="global-announcement" class="hidden">
+    <div class="announcement-content">
+        <span class="announcement-tag">[SYSTEM_BROADCAST]</span>
+        <span id="announcement-text"></span>
+    </div>
+</div>
 
 <div id="vibe-overlay" onclick="startVibe()">
     <div class="glitch-text">Welcome.</div>
@@ -16,7 +26,6 @@
 </div>
 
 <div id="lofi-player" style="position: absolute; visibility: hidden;"></div>
-
 <canvas id="bg-canvas"></canvas>
 <div id="custom-cursor"></div>
 
@@ -25,7 +34,6 @@
     <div class="status-info">
         <span id="discord-name">CONNECTING...</span>
         <div id="current-activity">FETCHING_DATA</div>
-
         <div class="volume-container">
             <span class="vol-icon">VOL</span>
             <input type="range" id="volume-control" min="0" max="100" value="50">
@@ -38,24 +46,20 @@
     <div class="archive-box">
         <h1 class="glitch-text">The Discord Situation.</h1>
         <div class="separator"></div>
-
         <div class="news-scroll">
             <article>
                 <h3>Day 1 - The Beginning</h3>
-                <p>So, it started simple. I basically downloaded "cheat" files for games like 𝙍𝙤𝙘𝙠𝙚𝙩 𝙇𝙚𝙖𝙜𝙪𝙚 and 𝙍𝙤𝙙𝙡𝙤𝙭. Thinking they were going to work, then after trying them, they successfully worked. I went to sleep at about 9:05 PM.</p>
+                <p>So, it started simple. I basically downloaded "cheat" files for games like 𝙍𝙤𝙘𝙠𝙚𝙩 𝙇𝙚𝙖𝙜𝙪𝙚 and 𝙍𝙤𝙗𝙡𝙤𝙭. Thinking they were going to work, then after trying them, they successfully worked. I went to sleep at about 9:05 PM.</p>
             </article>
-
             <article>
                 <h3>Day 2 - Hacked</h3>
                 <p>It was day 2. The day, everything went wrong. When I started up my PC, i saw that i was logged out of Discord. That was basically over for me. I went to sleep 7:02 PM.</p>
             </article>
-
             <article>
                 <h3>Day 3 - Soon.</h3>
                 <p>...</p>
             </article>
         </div>
-
         <div class="separator"></div>
         <p class="footer-note">Uploaded on April 10, 2026</p>
     </div>
