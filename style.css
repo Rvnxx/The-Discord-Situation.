@@ -1,26 +1,54 @@
+/* --- SECURITY OVERRIDE --- */
+* {
+    cursor: none !important;
+    user-select: none !important;
+    -webkit-user-drag: none;
+}
+
 body {
     margin: 0; padding: 0;
     background-color: #020205;
     color: #b19cd9;
-    font-family: 'Courier New', monospace;
+    font-family: 'Red Hat Mono', 'Courier New', monospace;
     overflow: hidden;
     height: 100vh;
+}
+
+/* --- INITIALIZER SCREEN --- */
+#vibe-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #020205; z-index: 10000;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
 }
 
 #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
 
 #custom-cursor {
-    width: 10px; height: 10px; background: #ff0055;
+    width: 12px; height: 12px; background: #ff0055;
     position: fixed; pointer-events: none; z-index: 9999;
-    box-shadow: 0 0 10px #ff0055;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff0055, 0 0 30px #ff0055;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+}
+
+/* --- CLICK RIPPLE --- */
+.click-ripple {
+    position: fixed; border: 2px solid #ff0055;
+    border-radius: 50%; pointer-events: none;
+    z-index: 9998; animation: ripple-out 0.5s ease-out forwards;
+}
+
+@keyframes ripple-out {
+    0% { width: 0; height: 0; opacity: 1; }
+    100% { width: 50px; height: 50px; opacity: 0; margin-left: -25px; margin-top: -25px; }
 }
 
 .status-bar {
     position: fixed; top: 20px; left: 20px;
     background: rgba(10, 5, 20, 0.9);
     border: 1px solid #4b0082;
-    padding: 10px; display: flex; align-items: center; gap: 10px;
-    z-index: 100;
+    padding: 10px; display: flex; align-items: center; gap: 10px; z-index: 100;
 }
 
 .profile-pic { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #ff0055; background-size: cover; }
@@ -33,35 +61,19 @@ body {
 .archive-box {
     background: rgba(10, 5, 20, 0.85);
     padding: 35px; border: 1px solid #4b0082;
-    width: 500px; /* Made slightly wider */
-    height: 70vh; /* Controlled height for scrolling */
-    display: flex;
-    flex-direction: column;
+    width: 500px; height: 70vh;
+    display: flex; flex-direction: column;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
 }
 
-.glitch-text { color: #ff0055; letter-spacing: 5px; margin-top: 0; }
+.glitch-text { font-family: 'Orbitron', sans-serif; color: #ff0055; letter-spacing: 5px; margin-top: 0; }
 
-.news-scroll {
-    flex-grow: 1; /* Makes the scroll area take up all available space */
-    overflow-y: auto;
-    text-align: left;
-    margin: 20px 0;
-    padding-right: 15px;
-}
-
-/* Red Hack Scrollbar */
+.news-scroll { flex-grow: 1; overflow-y: auto; text-align: left; margin: 20px 0; padding-right: 15px; }
 .news-scroll::-webkit-scrollbar { width: 3px; }
-.news-scroll::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
-.news-scroll::-webkit-scrollbar-thumb { background: #ff0055; box-shadow: 0 0 10px #ff0055; }
+.news-scroll::-webkit-scrollbar-thumb { background: #ff0055; }
 
-article {
-    border-left: 1px solid #ff0055;
-    padding-left: 15px;
-    margin-bottom: 40px;
-}
-
+article { border-left: 1px solid #ff0055; padding-left: 15px; margin-bottom: 40px; }
 article h3 { font-size: 1rem; color: #ff0055; margin-bottom: 5px; }
 article p { line-height: 1.5; font-size: 0.9rem; color: #d1c4e9; }
 
