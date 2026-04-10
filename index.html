@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BREACH_ARCHIVE // VAMP_SYSTEM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Red+Hat+Mono:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body oncontextmenu="return false;">
+
+<div id="vibe-overlay" onclick="startVibe()">
+    <div class="glitch-text">INITIALIZE_VAMP_SYSTEM</div>
+    <p style="font-size: 0.7rem; margin-top: 15px; color: #4b0082;">[ CLICK TO ENABLE AUDIO & INTERFACE ]</p>
+</div>
+
+<iframe id="lofi-player" style="display:none" width="0" height="0" src="" frameborder="0" allow="autoplay"></iframe>
 
 <canvas id="bg-canvas"></canvas>
 <div id="custom-cursor"></div>
@@ -22,42 +30,31 @@
 
 <div class="archive-container">
     <div class="archive-box">
-        <h1 class="glitch-text">BREACH_LOGS</h1>
+        <h1 class="glitch-text">The Discord Situation.</h1>
         <div class="separator"></div>
 
         <div class="news-scroll">
             <article>
-                <h3>[ENTRY_01] - THE INITIAL ACCESS</h3>
-                <p>It started with a simple notification. "New login detected." I wasn't at my desk. By the time I opened my phone, the email had already been changed. The bypass was instant.</p>
+                <h3>Day 1 - The Beginning</h3>
+                <p>So, it started simple. I basically downloaded "cheat" files for games like 𝙍𝙤𝙘𝙠𝙚𝙩 𝙇𝙚𝙖𝙜𝙪𝙚 and 𝙍𝙤𝙙𝙡𝙤𝙭. Thinking they were going to work, then after trying them, they successfully worked. I went to sleep at about 9:05 PM.</p>
             </article>
 
             <article>
-                <h3>[ENTRY_02] - THE SPREAD</h3>
-                <p>The hacker didn't stop at my account. They used my permissions to scrape token data from every server I managed. The logs show a massive spike in outbound API requests.</p>
+                <h3>Day 2 - Hacked</h3>
+                <p>It was day 2. The day, everything went wrong. When I started up my PC, i saw that i was logged out of Discord. That was basically over for me. I went to sleep 7:02 PM.</p>
             </article>
 
             <article>
-                <h3>[ENTRY_03] - THE LOCKOUT</h3>
-                <p>Every recovery attempt was met with a 'User Not Found' error. They had stripped the account of its identity—phone number removed, 2FA disabled, and backup codes invalidated.</p>
-            </article>
-
-            <article>
-                <h3>[ENTRY_04] - THE AFTERMATH</h3>
-                <p>Scams were sent to my entire friends list. "Hey, check out this project I'm working on." Classic bait. Many clicked. I watched my digital life burn from the outside.</p>
-            </article>
-
-            <article>
-                <h3>[ENTRY_05] - RECONSTRUCTION</h3>
-                <p>We are currently in the process of auditing all local files for potential RATs (Remote Access Trojans). The investigation is ongoing.</p>
+                <h3>Day 3 - Soon.</h3>
+                <p>...</p>
             </article>
         </div>
 
         <div class="separator"></div>
-        <p class="footer-note">END_OF_AVAILABLE_LOGS</p>
+        <p class="footer-note">Uploaded on April 10, 2026</p>
     </div>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
